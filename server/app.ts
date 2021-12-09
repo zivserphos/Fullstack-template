@@ -15,7 +15,7 @@ app.use(
 );
 
 app.get("/", (_req, res) => {
-  res.send("fuck off");
+  res.send("hello world");
 });
 app.use(errorHandler);
 
