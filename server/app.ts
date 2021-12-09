@@ -1,6 +1,4 @@
 import express from "express";
-// import mongoose from "mongoose";
-// import jwt from "jsonwebtoken";
 import * as bodyParser from "body-parser";
 import cors from "cors";
 import morgan from "morgan";

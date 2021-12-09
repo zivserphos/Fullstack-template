@@ -1,18 +1,16 @@
 import { ErrorRequestHandler } from "express";
-interface Error {
-  status?: number;
-  message?: string;
+interface HttpError {
+  status: number;
+  message: string;
 }
 
 export const errorHandler: ErrorRequestHandler = (
-  err: Error,
+  err: HttpError | Error,
   _req,
   res,
   _next
 ) => {
-  return res
-    .status(err.status || 500)
-    .send(err.message || "internal serverError");
+  "status" in err
+    ? res.status(err.status).send(err.message)
+    : res.status(500).send("internal serverError");
 };
-
-// module.exports = errorHandler;
