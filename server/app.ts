@@ -1,9 +1,11 @@
 import express from "express";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import * as bodyParser from "body-parser";
 import cors from "cors";
 import morgan from "morgan";
-import { morganHandler } from "./middlewares/morgan";
-import { errorHandler } from "./middlewares/errorHandlers";
+import morganHandler from "./middlewares/morgan";
+import errorHandler from "./middlewares/errorHandlers";
+
 const app = express();
 
 app.use(express.json());

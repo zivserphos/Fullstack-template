@@ -1,16 +1,19 @@
 import { ErrorRequestHandler } from "express";
+
 interface HttpError {
   status: number;
   message: string;
 }
 
-export const errorHandler: ErrorRequestHandler = (
+const errorHandler: ErrorRequestHandler = (
   err: HttpError | Error,
   _req,
   res,
+  // eslint-disable-next-line no-unused-vars
   _next
-) => {
+) =>
   "status" in err
     ? res.status(err.status).send(err.message)
     : res.status(500).send("internal serverError");
-};
+
+export default errorHandler;
