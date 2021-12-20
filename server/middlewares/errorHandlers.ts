@@ -9,7 +9,7 @@ const errorHandler: ErrorRequestHandler = (
   err: HttpError | Error,
   _req,
   res,
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _next
 ) =>
   "status" in err
