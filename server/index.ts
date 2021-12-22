@@ -1,5 +1,6 @@
 import app from "./app";
-// require("dotenv").config();
+import "./db/mongo";
+
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
