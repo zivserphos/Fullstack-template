@@ -1,6 +1,6 @@
 import React from "react";
 
-const App = function () {
+const App = function x() {
   return <div className="App">hello world</div>;
 };
 
